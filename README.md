@@ -45,7 +45,6 @@ serve un endpoint (es. Formspree).
 
 ## Prima del go-live
 
-- Inserire la **Partita IVA** nel footer (`src/partials/footer.html`, segnaposto TODO) e nella privacy.
 - Aggiungere i **numeri di autorità** (anni di attività, clienti, interventi) quando disponibili: andrebbero nella fascia sotto l'hero.
 - Sostituire il logo provvisorio (`src/partials/logo.html`, `src/assets/favicon.svg`) con quello ufficiale.
 - Aggiungere **foto reali** (lavori prima/dopo, team): oggi il sito non usa immagini.
