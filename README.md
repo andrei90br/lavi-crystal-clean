@@ -46,7 +46,7 @@ serve un endpoint (es. Formspree).
 ## Prima del go-live
 
 - Aggiungere i **numeri di autorità** (anni di attività, clienti, interventi) quando disponibili: andrebbero nella fascia sotto l'hero.
-- Sostituire il logo provvisorio (`src/partials/logo.html`, `src/assets/favicon.svg`) con quello ufficiale.
+- Logo: ritagliato dal file di Andrei (JPG 1024 px). Se esiste una versione vettoriale o PNG trasparente ad alta risoluzione, rigenerare `src/assets/logo-*.png`, `favicon-48.png`, `apple-touch-icon.png` e `og-image.jpg`.
 - Aggiungere **foto reali** (lavori prima/dopo, team): oggi il sito non usa immagini.
 - Far verificare il testo della privacy.
 - Dominio: impostare `SITE_URL` definitivo, togliere `NOINDEX` dal workflow e configurare il dominio su Pages.
