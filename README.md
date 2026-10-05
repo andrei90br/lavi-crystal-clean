@@ -8,7 +8,7 @@ Slogan: **Pulizia cristallina, impronta leggera.**
 
 ## Pagine
 
-- `index.html` — landing: hero, punti di forza, problema, percorsi, servizi, come funziona, standard ecologico, recensioni, zona, FAQ, preventivo
+- `index.html` — landing: hero, punti di forza, problema, percorsi, servizi, come funziona, standard ecologico, lavori prima/dopo, recensioni, zona, FAQ, preventivo
 - `privati.html` — pulizie per la casa
 - `aziende.html` — uffici, negozi, case vacanza e B&B (`#case-vacanza`)
 - `contatti.html` — recapiti e modulo
@@ -47,6 +47,6 @@ serve un endpoint (es. Formspree).
 
 - Aggiungere i **numeri di autorità** (anni di attività, clienti, interventi) quando disponibili: andrebbero nella fascia sotto l'hero.
 - Logo: ritagliato dal file di Andrei (JPG 1024 px). Se esiste una versione vettoriale o PNG trasparente ad alta risoluzione, rigenerare `src/assets/logo-*.png`, `favicon-48.png`, `apple-touch-icon.png` e `og-image.jpg`.
-- Aggiungere **foto reali** (lavori prima/dopo, team): oggi il sito non usa immagini.
+- Foto dei lavori (prima/dopo e galleria) in `src/assets/lavori/`, sezione `src/partials/lavori.html` in home. Mancano ancora foto del team.
 - Far verificare il testo della privacy.
 - Dominio: impostare `SITE_URL` definitivo, togliere `NOINDEX` dal workflow e configurare il dominio su Pages.
