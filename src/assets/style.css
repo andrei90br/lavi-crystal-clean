@@ -83,22 +83,23 @@ p { margin: 0 0 1em; }
 .logo__t b { font-weight: 800; }
 .logo--light { color: #fff; }
 .nav { display: flex; gap: 22px; margin-left: auto; }
-.nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem; padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .nav a:hover, .nav a[aria-current="page"] { border-color: var(--blue); }
 .nav__tel { display: none; }
 .hd__cta { display: flex; align-items: center; gap: 14px; }
 .hd__tel { display: flex; align-items: center; gap: 6px; color: var(--navy); font-weight: 700; text-decoration: none; white-space: nowrap; }
 .hd__tel svg { width: 18px; height: 18px; fill: var(--blue); }
+.hd__cta .btn { white-space: nowrap; }
 .burger { display: none; width: 44px; height: 44px; border: 0; background: transparent; padding: 10px; cursor: pointer; }
 .burger span { display: block; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 2px; transition: transform .2s, opacity .2s; }
 .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .hd__tel span { display: none; }
 }
-@media (max-width: 920px) {
+@media (max-width: 1060px) {
   .burger { display: block; }
   .hd__cta { margin-left: auto; }
   .hd__tel { display: none; }
