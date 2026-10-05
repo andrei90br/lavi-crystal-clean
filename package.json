@@ -1,0 +1,9 @@
+{
+  "name": "lavicrystalclean-sito-nuovo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && npx --yes serve site -l 5173"
+  }
+}

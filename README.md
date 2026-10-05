@@ -1,0 +1,53 @@
+# Lavi CrystalClean — sito nuovo
+
+Sito statico (solo italiano) per Lavi CrystalClean, impresa di pulizie a Croviana (TN), Val di Sole.
+Sostituisce il sito Wix su lavicrystalclean.it. Struttura da landing page ad alta conversione, ispirata
+alla reference impresadipulizievicenza.it (hero con CTA, punti di forza, percorsi Privati/Aziende, preventivo gratuito).
+
+Slogan: **Pulizia cristallina, impronta leggera.**
+
+## Pagine
+
+- `index.html` — landing: hero, punti di forza, problema, percorsi, servizi, come funziona, standard ecologico, recensioni, zona, FAQ, preventivo
+- `privati.html` — pulizie per la casa
+- `aziende.html` — uffici, negozi, case vacanza e B&B (`#case-vacanza`)
+- `contatti.html` — recapiti e modulo
+- `privacy.html` — informativa privacy e cookie (noindex)
+
+## Struttura
+
+```
+src/pages/*.html     pagine; iniziano con un blocco JSON tra righe "---" (title, description, slug, tipo)
+src/partials/*.html  head, header, footer, logo, form, reviews; si includono con {{> nome}}
+src/assets/          style.css, main.js, favicon.svg, font Manrope (self-hosted, OFL)
+build.mjs            genera site/ (Node 18+, nessuna dipendenza)
+```
+
+## Comandi
+
+```sh
+node build.mjs                 # genera site/
+npm run serve                  # genera e apre l'anteprima su http://localhost:5173
+SITE_URL=https://www.lavicrystalclean.it node build.mjs   # URL per canonical e sitemap
+NOINDEX=1 node build.mjs       # anteprima non indicizzabile
+```
+
+## Deploy
+
+Ogni push su `main` pubblica su GitHub Pages (`https://<utente>.github.io/<repository>/`) con `noindex`.
+Va attivato una volta: Settings → Pages → Source: **GitHub Actions**.
+
+## Modulo preventivo
+
+Non c'è un backend: il modulo compone il messaggio e lo apre in WhatsApp (pulsante principale) oppure nel
+programma di posta (pulsante secondario). Per ricevere le richieste via email senza passaggi per il cliente
+serve un endpoint (es. Formspree).
+
+## Prima del go-live
+
+- Inserire la **Partita IVA** nel footer (`src/partials/footer.html`, segnaposto TODO) e nella privacy.
+- Aggiungere i **numeri di autorità** (anni di attività, clienti, interventi) quando disponibili: andrebbero nella fascia sotto l'hero.
+- Sostituire il logo provvisorio (`src/partials/logo.html`, `src/assets/favicon.svg`) con quello ufficiale.
+- Aggiungere **foto reali** (lavori prima/dopo, team): oggi il sito non usa immagini.
+- Far verificare il testo della privacy.
+- Dominio: impostare `SITE_URL` definitivo, togliere `NOINDEX` dal workflow e configurare il dominio su Pages.

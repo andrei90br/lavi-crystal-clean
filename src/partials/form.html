@@ -1,0 +1,54 @@
+<section class="sec sec--dark quote" id="preventivo" aria-labelledby="q-h">
+  <div class="wrap quote__in">
+    <div class="quote__copy">
+      <p class="eyebrow eyebrow--light">Preventivo gratuito</p>
+      <h2 id="q-h">Dicci cosa ti serve.<br>Al resto pensiamo noi.</h2>
+      <p class="lead">Compila il modulo in meno di un minuto. Ti ricontattiamo personalmente, organizziamo il sopralluogo e ti mandiamo un preventivo chiaro, su misura e senza impegno.</p>
+      <ul class="ticks ticks--light">
+        <li>Sopralluogo e preventivo gratuiti</li>
+        <li>Prezzo calcolato su metratura, tipo di intervento e località, senza sorprese</li>
+        <li>Prodotti a basso impatto ambientale inclusi</li>
+      </ul>
+      <p class="quote__alt">Preferisci parlare subito?<br>
+        <a href="tel:+393276726509" data-cta="form_tel">Chiama il +39 327 672 6509</a> oppure
+        <a href="https://wa.me/393276726509" target="_blank" rel="noopener" data-cta="form_wa">scrivi su WhatsApp</a>.</p>
+    </div>
+    <form class="form" id="quoteForm" novalidate>
+      <fieldset class="seg">
+        <legend>Per chi è il servizio?</legend>
+        <label><input type="radio" name="tipo" value="Privato" checked><span>Casa</span></label>
+        <label><input type="radio" name="tipo" value="Azienda"><span>Azienda</span></label>
+        <label><input type="radio" name="tipo" value="Casa vacanza / B&amp;B"><span>Casa vacanza</span></label>
+      </fieldset>
+      <label>Servizio
+        <select name="servizio">
+          <option>Pulizie ricorrenti</option>
+          <option>Pulizia profonda una tantum</option>
+          <option>Pulizie uffici, negozi, studi</option>
+          <option>Cambio ospiti e fine stagione</option>
+          <option>Post-ristrutturazione</option>
+          <option>Post-trasloco</option>
+          <option>Sanificazione</option>
+          <option>Vetri e vetrine</option>
+          <option>Altro (lo spiego nel messaggio)</option>
+        </select>
+      </label>
+      <div class="form__row">
+        <label>Nome e cognome<input name="nome" type="text" autocomplete="name" required><span class="fe">Inserisci il tuo nome</span></label>
+        <label>Telefono<input name="telefono" type="tel" inputmode="tel" autocomplete="tel" required><span class="fe">Inserisci un numero valido</span></label>
+      </div>
+      <div class="form__row">
+        <label>Comune<input name="comune" type="text" autocomplete="address-level2" placeholder="Es. Malè"></label>
+        <label>Metri quadri (circa)<input name="mq" type="number" inputmode="numeric" min="10" max="10000" placeholder="Es. 90"></label>
+      </div>
+      <label>Messaggio<textarea name="messaggio" rows="3" maxlength="800" placeholder="Cosa dobbiamo pulire, con che frequenza, eventuali date"></textarea></label>
+      <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattato.</span><span class="fe">Serve il consenso per ricontattarti</span></label>
+      <button class="btn btn--wa btn--block" type="submit" data-cta="form_submit_wa">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+        Invia la richiesta su WhatsApp
+      </button>
+      <button class="btn btn--ghost btn--block" type="button" id="sendMail" data-cta="form_submit_mail">Preferisco inviarla via email</button>
+      <p class="form__micro">Gratuito e senza impegno. I tuoi dati servono solo a risponderti.</p>
+    </form>
+  </div>
+</section>
