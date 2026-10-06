@@ -62,6 +62,10 @@ function lastmod(file) {
 const text = (html) =>
   html.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 
+// Scheda Google dell'impresa (profilo Google Business): link nel sito e in sameAs dello schema.org
+const GOOGLE =
+  "https://www.google.com/search?q=Lavi+CrystalClean&stick=H4sIAAAAAAAA_-NgU1IxqDAxtzBKMzW2sEg2tDA2MTO1MqhItDRPtbQEctJMjUzNjRexCvoklmUqOBdVFpck5jjnpCbmAQCTaRWZPAAAAA";
+
 // Dati strutturati schema.org: l'impresa è descritta una volta (@id) e ogni pagina la richiama.
 const BIZ = `${SITE_URL}/#impresa`;
 const TOWNS = [
@@ -124,7 +128,7 @@ const business = {
       itemOffered: { "@type": "Service", name, url: `${SITE_URL}/${path}`, provider: { "@id": BIZ } },
     })),
   },
-  sameAs: ["https://www.instagram.com/lavicrystalclean/"],
+  sameAs: ["https://www.instagram.com/lavicrystalclean/", GOOGLE],
 };
 
 function schema(meta, canonical, html) {
@@ -210,6 +214,7 @@ for (const file of readdirSync(join(SRC, "pages")).filter((f) => f.endsWith(".ht
     base: file === "404.html" ? `<base href="${SITE_URL}/">` : "",
     ogimage: ogImage(meta.slug),
     ogalt: ogAlt(meta.slug),
+    google: GOOGLE.replace(/&/g, "&amp;"),
     schema: "",
   };
   // Primo passaggio per leggere le FAQ, secondo con i dati strutturati

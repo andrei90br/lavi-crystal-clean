@@ -300,3 +300,4 @@ a.contact:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   .mbar a:nth-child(2) svg { fill: var(--wa); }
   .mbar__main { background: var(--blue) !important; color: #fff !important; }
 }
+.rev__cta { margin-top: 1.6rem; text-align: center; }
