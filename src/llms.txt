@@ -1,0 +1,22 @@
+# Lavi CrystalClean
+
+> Impresa di pulizie con sede a Croviana (TN), in Val di Sole, Trentino. Pulizie professionali per privati, aziende, case vacanza e B&B con prodotti a basso impatto ambientale. Sopralluogo e preventivo gratuiti e senza impegno. Slogan: "Pulizia cristallina, impronta leggera."
+
+- Titolare: Lavinia
+- Sede: 38027 Croviana (TN), Italia. P.IVA 02812070221
+- Contatti: telefono e WhatsApp +39 327 672 6509 (https://wa.me/393276726509). Non c'è un indirizzo email pubblico.
+- Zone servite: tutta la Val di Sole (Croviana, Malè, Dimaro Folgarida, Commezzadura, Mezzana, Marilleva, Pellizzano, Ossana, Vermiglio, Peio, Caldes, Terzolas, Cavizzana), Val di Rabbi e Val di Non (Cles). Altre zone del Trentino su richiesta.
+- Prezzi: non pubblicati; dipendono da metratura, tipo di intervento e località e vengono indicati in un preventivo scritto dopo il sopralluogo gratuito.
+- Prodotti e attrezzature professionali sono inclusi nel servizio.
+
+## Servizi
+
+- [Pulizie per la casa]({{site}}/privati.html): pulizie ricorrenti settimanali o quindicinali, pulizia profonda, post-ristrutturazione, post-trasloco, pulizie stagionali e apertura o chiusura della seconda casa, riordino e decluttering.
+- [Pulizie per aziende]({{site}}/aziende.html): pulizie periodiche di uffici, negozi e studi in orari concordati, vetri e vetrine, sanificazioni, pulizie post-evento.
+- [Case vacanza, Airbnb e B&B]({{site}}/aziende.html#case-vacanza): cambio ospiti tra check-out e check-in, pulizie di inizio e fine stagione, calendario organizzato sulle prenotazioni.
+
+## Pagine
+
+- [Home]({{site}}/): panoramica dei servizi, foto prima e dopo, recensioni, zone servite e domande frequenti
+- [Contatti]({{site}}/contatti.html): telefono, WhatsApp e modulo per il preventivo gratuito
+- [Instagram](https://www.instagram.com/lavicrystalclean/)

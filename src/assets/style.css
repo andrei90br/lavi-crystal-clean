@@ -66,6 +66,7 @@ p { margin: 0 0 1em; }
 /* Eyebrow, testi */
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 700; color: var(--green-d); margin-bottom: .8em; }
 .eyebrow--light { color: var(--sky); }
+.h1-kw { display: block; line-height: 1.5; }
 .lead { font-size: 1.15rem; color: #cfe3ee; max-width: 38em; }
 .lead--dark { color: var(--muted); }
 .hl { color: var(--sky); }
