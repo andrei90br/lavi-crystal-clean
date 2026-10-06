@@ -24,6 +24,21 @@ const REDIRECTS = {
   "blog.html": "",
 };
 
+// Immagini per le anteprime social e per Google: screenshot della parte alta di ogni pagina
+// (1200x630, rifatti a mano quando cambia l'apertura della pagina). Le pagine senza screenshot usano quello della home.
+const OG = {
+  home: "Pagina iniziale del sito Lavi CrystalClean: impresa di pulizie in Val di Sole per privati e aziende",
+  privati: "Pagina Privati del sito Lavi CrystalClean: pulizie domestiche in Val di Sole",
+  aziende: "Pagina Aziende e case vacanza del sito Lavi CrystalClean: pulizie per uffici, negozi e appartamenti turistici",
+  contatti: "Pagina Contatti del sito Lavi CrystalClean: telefono, WhatsApp e richiesta di preventivo gratuito",
+};
+const ogImage = (slug) => `${SITE_URL}/assets/og-${slug in OG ? slug : "home"}.jpg`;
+const ogAlt = (slug) => OG[slug] || OG.home;
+
+// Foto reali dei lavori pubblicate nella home: entrano nei dati strutturati e nella sitemap delle immagini
+const PHOTOS = [...readFileSync(join(SRC, "partials", "lavori.html"), "utf8").matchAll(/<img src="(assets\/lavori\/[\w-]+\.jpg)"/g)]
+  .map(([, src]) => `${SITE_URL}/${src.replace(/-sm\.jpg$/, ".jpg")}`);
+
 const partial = (name) => readFileSync(join(SRC, "partials", `${name}.html`), "utf8");
 
 function render(tpl, vars, depth = 0) {
@@ -63,7 +78,7 @@ const business = {
   slogan: "Pulizia cristallina, impronta leggera.",
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/assets/logo-192.png`,
-  image: `${SITE_URL}/assets/og-image.jpg`,
+  image: [ogImage("home"), ...PHOTOS.filter((u) => /dopo\.jpg$/.test(u)).slice(0, 4)],
   telephone: "+39 327 672 6509",
   contactPoint: {
     "@type": "ContactPoint",
@@ -175,6 +190,7 @@ rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 cpSync(join(SRC, "assets"), join(OUT, "assets"), { recursive: true });
 if (existsSync("CNAME")) cpSync("CNAME", join(OUT, "CNAME"));
+cpSync(join(SRC, "favicon.ico"), join(OUT, "favicon.ico"));
 
 const urls = [];
 for (const file of readdirSync(join(SRC, "pages")).filter((f) => f.endsWith(".html"))) {
@@ -192,6 +208,8 @@ for (const file of readdirSync(join(SRC, "pages")).filter((f) => f.endsWith(".ht
     year: String(new Date().getFullYear()),
     // La pagina 404 viene servita a qualsiasi indirizzo: i percorsi relativi partono dalla radice del sito
     base: file === "404.html" ? `<base href="${SITE_URL}/">` : "",
+    ogimage: ogImage(meta.slug),
+    ogalt: ogAlt(meta.slug),
     schema: "",
   };
   // Primo passaggio per leggere le FAQ, secondo con i dati strutturati
@@ -203,7 +221,10 @@ for (const file of readdirSync(join(SRC, "pages")).filter((f) => f.endsWith(".ht
   writeFileSync(join(OUT, file), html);
   if (!meta.noindex) {
     const d = lastmod(join(SRC, "pages", file));
-    urls.push(`  <url><loc>${canonical}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`);
+    const imgs = [ogImage(meta.slug), ...(/\{\{>\s*lavori\s*\}\}/.test(raw) ? PHOTOS : [])]
+      .map((u) => `<image:image><image:loc>${u}</image:loc></image:image>`)
+      .join("");
+    urls.push(`  <url><loc>${canonical}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}${imgs}</url>`);
   }
 }
 
@@ -233,7 +254,7 @@ for (const [from, to] of Object.entries(REDIRECTS)) {
 
 writeFileSync(
   join(OUT, "sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.join("\n")}\n</urlset>\n`
 );
 writeFileSync(
   join(OUT, "robots.txt"),

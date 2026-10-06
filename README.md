@@ -54,6 +54,7 @@ mostra solo telefono e WhatsApp: nessun indirizzo email.
 ## Prima del go-live
 
 - Aggiungere i **numeri di autorità** (anni di attività, clienti, interventi) quando disponibili: andrebbero nella fascia sotto l'hero.
-- Logo: ritagliato dal file di Andrei (JPG 1024 px). Se esiste una versione vettoriale o PNG trasparente ad alta risoluzione, rigenerare `src/assets/logo-*.png`, `favicon-48.png`, `apple-touch-icon.png` e `og-image.jpg`.
+- Logo: ritagliato dal file di Andrei (JPG 1024 px). Se esiste una versione vettoriale o PNG trasparente ad alta risoluzione, rigenerare `src/assets/logo-*.png`, `favicon-48.png`, `apple-touch-icon.png` e `src/favicon.ico`.
+- Anteprime social e immagini per Google: `src/assets/og-{home,privati,aziende,contatti}.jpg` sono screenshot 1200x630 della parte alta di ogni pagina (Playwright, viewport 1200x630). Rifarli quando cambia l'apertura di una pagina.
 - Foto dei lavori (prima/dopo e galleria) in `src/assets/lavori/`, sezione `src/partials/lavori.html` in home. Mancano ancora foto del team.
 - Far verificare il testo della privacy.
