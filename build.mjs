@@ -24,13 +24,13 @@ const REDIRECTS = {
   "blog.html": "",
 };
 
-// Immagini per le anteprime social e per Google: screenshot della parte alta di ogni pagina
-// (1200x630, rifatti a mano quando cambia l'apertura della pagina). Le pagine senza screenshot usano quello della home.
+// Immagini per le anteprime social e per Google: foto vere "prima | dopo" di un lavoro (1200x630,
+// composte dalle foto in assets/lavori). Le pagine senza immagine propria usano quella della home.
 const OG = {
-  home: "Pagina iniziale del sito Lavi CrystalClean: impresa di pulizie in Val di Sole per privati e aziende",
-  privati: "Pagina Privati del sito Lavi CrystalClean: pulizie domestiche in Val di Sole",
-  aziende: "Pagina Aziende e case vacanza del sito Lavi CrystalClean: pulizie per uffici, negozi e appartamenti turistici",
-  contatti: "Pagina Contatti del sito Lavi CrystalClean: telefono, WhatsApp e richiesta di preventivo gratuito",
+  home: "Prima e dopo la pulizia di un open space con cucina, lavoro di Lavi CrystalClean in Val di Sole",
+  privati: "Prima e dopo la pulizia di un soggiorno, lavoro di Lavi CrystalClean in Val di Sole",
+  aziende: "Prima e dopo la pulizia della camera di un appartamento per vacanze in Val di Sole, lavoro di Lavi CrystalClean",
+  contatti: "Prima e dopo la pulizia di un angolo cottura, lavoro di Lavi CrystalClean in Val di Sole",
 };
 const ogImage = (slug) => `${SITE_URL}/assets/og-${slug in OG ? slug : "home"}.jpg`;
 const ogAlt = (slug) => OG[slug] || OG.home;
@@ -78,7 +78,7 @@ const business = {
   slogan: "Pulizia cristallina, impronta leggera.",
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/assets/logo-192.png`,
-  image: [ogImage("home"), ...PHOTOS.filter((u) => /dopo\.jpg$/.test(u)).slice(0, 4)],
+  image: [...PHOTOS.filter((u) => /dopo\.jpg$/.test(u)).slice(0, 4), ogImage("home")],
   telephone: "+39 327 672 6509",
   contactPoint: {
     "@type": "ContactPoint",
