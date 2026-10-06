@@ -1,6 +1,5 @@
 (() => {
   const WA = "393276726509";
-  const MAIL = "Responsabile@lavicrystalclean.it";
 
   // Menu mobile
   const burger = document.querySelector(".burger");
@@ -75,11 +74,5 @@
     e.preventDefault();
     if (!validate()) return;
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(message())}`, "_blank", "noopener");
-  });
-
-  document.getElementById("sendMail")?.addEventListener("click", () => {
-    if (!validate()) return;
-    const subject = `Richiesta preventivo: ${field("servizio").value}`;
-    location.href = `mailto:${MAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message())}`;
   });
 })();

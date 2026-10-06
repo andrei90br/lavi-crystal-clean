@@ -39,9 +39,8 @@ Va attivato una volta: Settings → Pages → Source: **GitHub Actions**.
 
 ## Modulo preventivo
 
-Non c'è un backend: il modulo compone il messaggio e lo apre in WhatsApp (pulsante principale) oppure nel
-programma di posta (pulsante secondario). Per ricevere le richieste via email senza passaggi per il cliente
-serve un endpoint (es. Formspree).
+Non c'è un backend: il modulo compone il messaggio e lo apre in WhatsApp. Su richiesta di Andrei il sito
+mostra solo telefono e WhatsApp: nessun indirizzo email.
 
 ## Prima del go-live
 
