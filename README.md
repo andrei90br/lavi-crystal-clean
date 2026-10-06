@@ -13,6 +13,15 @@ Slogan: **Pulizia cristallina, impronta leggera.**
 - `aziende.html` — uffici, negozi, case vacanza e B&B (`#case-vacanza`)
 - `contatti.html` — recapiti e modulo
 - `privacy.html` — informativa privacy e cookie (noindex)
+- `404.html` — pagina non trovata (noindex): rimanda alla pagina nuova più vicina o alla home
+
+## SEO e GEO
+
+`build.mjs` genera per ogni pagina canonical, Open Graph, dati strutturati schema.org (impresa con zone servite e
+servizi, pagina, breadcrumb, servizio, FAQ lette dalla pagina) e inoltre `sitemap.xml` (con data di ultima modifica da git),
+`robots.txt` e `llms.txt` (riassunto per gli assistenti AI, sorgente in `src/llms.txt`).
+I vecchi indirizzi del sito Wix ancora presenti su Google sono in `REDIRECTS` dentro `build.mjs`: ognuno diventa
+una pagina che rimanda subito a quella nuova.
 
 ## Struttura
 

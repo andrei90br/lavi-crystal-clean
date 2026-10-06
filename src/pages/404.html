@@ -1,0 +1,47 @@
+---
+{
+  "slug": "404",
+  "tipo": "Privato",
+  "noindex": true,
+  "title": "Pagina non trovata | Lavi CrystalClean",
+  "description": "La pagina cercata non esiste più. Torna alla home di Lavi CrystalClean, impresa di pulizie in Val di Sole."
+}
+---
+{{> head}}
+<body data-tipo="{{tipo}}">
+{{> header}}
+<main id="main">
+<section class="hero hero--page hero--short" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light">Errore 404</p>
+    <h1 id="hero-h">Questa pagina non c'è più.</h1>
+    <p class="lead">Il sito è stato rinnovato e alcuni indirizzi sono cambiati. Ti portiamo alla home tra pochi secondi.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap narrow prose">
+    <p>Puoi andare direttamente a una di queste pagine:</p>
+    <ul>
+      <li><a href="./">Home: impresa di pulizie in Val di Sole</a></li>
+      <li><a href="privati.html">Pulizie per la casa</a></li>
+      <li><a href="aziende.html">Pulizie per uffici, negozi e case vacanza</a></li>
+      <li><a href="contatti.html">Contatti e preventivo gratuito</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+{{> footer}}
+<script>
+  // Vecchi indirizzi del sito Wix: rimanda alla pagina nuova più vicina
+  (() => {
+    const p = location.pathname.toLowerCase();
+    const to = /privacy|blank/.test(p) ? "privacy.html"
+      : /contatt|contact|prenota|book/.test(p) ? "contatti.html"
+      : /aziend|uffic|business|vacanz|airbnb/.test(p) ? "aziende.html"
+      : /privat|casa|domestic/.test(p) ? "privati.html"
+      : "";
+    setTimeout(() => location.replace(document.baseURI.replace(/[^/]*$/, "") + to), to ? 0 : 4000);
+  })();
+</script>
+</body>
+</html>
