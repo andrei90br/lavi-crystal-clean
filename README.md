@@ -34,7 +34,7 @@ NOINDEX=1 node build.mjs       # anteprima non indicizzabile
 
 ## Deploy
 
-Ogni push su `main` pubblica su GitHub Pages (`https://<utente>.github.io/<repository>/`) con `noindex`.
+Ogni push su `main` pubblica su GitHub Pages sul dominio `https://www.lavicrystalclean.it/` (file `CNAME`), indicizzabile.
 Va attivato una volta: Settings → Pages → Source: **GitHub Actions**.
 
 ## Modulo preventivo
@@ -48,4 +48,3 @@ mostra solo telefono e WhatsApp: nessun indirizzo email.
 - Logo: ritagliato dal file di Andrei (JPG 1024 px). Se esiste una versione vettoriale o PNG trasparente ad alta risoluzione, rigenerare `src/assets/logo-*.png`, `favicon-48.png`, `apple-touch-icon.png` e `og-image.jpg`.
 - Foto dei lavori (prima/dopo e galleria) in `src/assets/lavori/`, sezione `src/partials/lavori.html` in home. Mancano ancora foto del team.
 - Far verificare il testo della privacy.
-- Dominio: impostare `SITE_URL` definitivo, togliere `NOINDEX` dal workflow e configurare il dominio su Pages.

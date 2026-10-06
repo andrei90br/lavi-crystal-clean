@@ -5,7 +5,7 @@
 // Variabili d'ambiente:
 //   SITE_URL  URL finale del sito, senza "/" finale (canonical, sitemap, Open Graph)
 //   NOINDEX   "1" per aggiungere noindex (anteprima su github.io)
-import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync, cpSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync, cpSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const SRC = "src";
@@ -27,6 +27,7 @@ function render(tpl, vars, depth = 0) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 cpSync(join(SRC, "assets"), join(OUT, "assets"), { recursive: true });
+if (existsSync("CNAME")) cpSync("CNAME", join(OUT, "CNAME"));
 
 const urls = [];
 for (const file of readdirSync(join(SRC, "pages")).filter((f) => f.endsWith(".html"))) {
